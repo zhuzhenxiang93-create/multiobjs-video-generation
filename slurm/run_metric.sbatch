@@ -9,9 +9,9 @@ set -Eeuo pipefail
 : "${METRIC:?Set METRIC}"
 : "${SOURCE_ROOT:?Set SOURCE_ROOT}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../scripts" && pwd)"
-export HF_HOME="${HF_HOME:-/data/zzhu126/cache/huggingface}"
-export TORCH_HOME="${TORCH_HOME:-/data/zzhu126/cache/torch}"
-export TMPDIR="${TMPDIR:-/data/zzhu126/tmp}"
+export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
+export TORCH_HOME="${TORCH_HOME:-$HOME/.cache/torch}"
+export TMPDIR="${TMPDIR:-/tmp}"
 export PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 case "$METRIC" in
   countvid)
