@@ -12,10 +12,10 @@ DIMS=(subject_consistency background_consistency motion_smoothness dynamic_degre
 DIM="${DIMS[$SLURM_ARRAY_TASK_ID]}"
 REPO="$SOURCE_ROOT/VBench"
 mkdir -p "$BATCH_DIR/vbench/$DIM"
-export VBENCH_CACHE_DIR="${VBENCH_CACHE_DIR:-/data/zzhu126/cache/vbench}"
-export HF_HOME="${HF_HOME:-/data/zzhu126/cache/huggingface}"
-export TORCH_HOME="${TORCH_HOME:-/data/zzhu126/cache/torch}"
-export TMPDIR="${TMPDIR:-/data/zzhu126/tmp}"
+export VBENCH_CACHE_DIR="${VBENCH_CACHE_DIR:-$HOME/.cache/vbench}"
+export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
+export TORCH_HOME="${TORCH_HOME:-$HOME/.cache/torch}"
+export TMPDIR="${TMPDIR:-/tmp}"
 export PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 cd "$REPO"
 exec "$VBENCH_PYTHON" -B evaluate.py --videos_path "$BATCH_DIR/videos" \
