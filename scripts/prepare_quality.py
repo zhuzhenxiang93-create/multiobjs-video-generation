@@ -19,7 +19,7 @@ def main():
             assert link.resolve() == source.resolve()
         else:
             link.symlink_to(source)
-        mapping[str(link.resolve())] = row["prompt"]
+        mapping[str(link)] = row["prompt"]
     output = a.batch / "vbench_prompt_map.json"
     output.write_text(json.dumps(mapping, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({"videos": len(mapping), "prompt_map": str(output)}))
