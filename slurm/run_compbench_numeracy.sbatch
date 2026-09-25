@@ -16,8 +16,8 @@ EXPECTED=b1b77eee3f82af0320f2c1c2abddace1c0b5acc461a9fa35dd3ec05bbe7b6412
 test "$(sha256sum "$SCRIPT" | cut -d ' ' -f1)" = "$EXPECTED"
 test -s "$SOURCE_ROOT/EvalCrafter/checkpoints/ckpt/groundingdino_swint_ogc.pth"
 export PYTHONPATH="$GDINO${PYTHONPATH:+:$PYTHONPATH}"
-export HF_HOME="${HF_HOME:-/data/zzhu126/cache/huggingface}"
-export TMPDIR="${TMPDIR:-/data/zzhu126/tmp}"
+export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
+export TMPDIR="${TMPDIR:-/tmp}"
 export PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 cd "$MODULE"
 exec "$EVALCRAFTER_PYTHON" -B "$SCRIPT" \
