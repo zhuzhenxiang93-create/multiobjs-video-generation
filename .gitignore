@@ -1,0 +1,25 @@
+# Never commit generated media, model weights, environments, caches, or results.
+*.mp4
+*.avi
+*.mov
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.jpg
+*.png
+*.gif
+*.log
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+checkpoints/
+models/
+cache/
+results/
+logs/
+batch/
